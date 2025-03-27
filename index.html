@@ -1,7 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMHI Väderinformation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages. Maybe I'll add something here later.</p>
+    <button class="theme-toggle" id="themeToggle" aria-label="Växla mellan ljust och mörkt tema">
+        <i class="fas fa-moon"></i>
+    </button>
+    <div class="container">
+        <h1>SMHI Väderinformation</h1>
+        <div class="search-container">
+            <button id="locationButton" onclick="getUserLocation()" class="location-button">
+                <i class="fas fa-location-dot"></i> Använd min plats
+            </button>
+            <div class="input-group">
+                <input type="text" id="locationInput" placeholder="Ange koordinater (t.ex. 18.0686,59.3293)">
+                <button onclick="searchWeather()">Sök</button>
+            </div>
+        </div>
+        <div class="info-text">
+            <p>Ange koordinater i formatet: longitud,latitud</p>
+        </div>
+        <div id="locationName" class="location-name"></div>
+        <div id="currentWeather" class="weather-section">
+            <h2>Aktuellt väder</h2>
+            <div id="currentWeatherContent"></div>
+        </div>
+        <div id="weatherInfo" class="weather-container">
+            <div id="hourlyForecast" class="weather-section">
+                <h2>Timprognos</h2>
+                <div id="hourlyForecastContent" class="hourly-forecast"></div>
+            </div>
+            <div id="forecast" class="weather-section">
+                <h2>5-dagars prognos</h2>
+                <div id="forecastContent"></div>
+            </div>
+            <div id="warnings" class="weather-section">
+                <h2>Vädervarningar</h2>
+                <div id="warningsContent"></div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Väderdata hämtas från <a href="https://opendata.smhi.se/" target="_blank" rel="noopener">SMHI:s öppna data</a> under <a href="https://opendata.smhi.se/terms" target="_blank" rel="noopener">SMHI:s användarvillkor</a></p>
+                <p>Platsnamn hämtas från <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap</a> under <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">ODbL-licensen</a></p>
+                <p>Ikoner från <a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a> under <a href="https://fontawesome.com/license" target="_blank" rel="noopener">CC BY 4.0-licensen</a></p>
+                <p>Designsystem från <a href="https://fluent2.microsoft.design/" target="_blank" rel="noopener">Fluent 2</a> av Microsoft</p>
+                <p>Sidan är byggd med hjälp av <a href="https://cursor.sh/" target="_blank" rel="noopener">Cursor AI</a></p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
