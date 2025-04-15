@@ -476,6 +476,7 @@ h2 {
     display: inline-block;
 }
 
+/* Warning styles */
 .warning {
     background-color: var(--surface);
     border-left: 4px solid #FF9800;
@@ -483,6 +484,9 @@ h2 {
     margin-bottom: var(--spacing-md);
     border-radius: var(--radius);
     border: 1px solid var(--border);
+    display: flex;
+    gap: var(--spacing-md);
+    transition: var(--transition);
 }
 
 .warning:hover {
@@ -493,6 +497,11 @@ h2 {
 .warning i {
     color: #FF9800;
     font-size: 20px;
+    margin-top: 4px;
+}
+
+.warning i.fa-info-circle {
+    color: #2196F3;
 }
 
 .warning h3 {
@@ -505,7 +514,30 @@ h2 {
 .warning p {
     color: var(--text-secondary);
     font-size: var(--font-size-sm);
-    margin: 0;
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.warning p:last-child {
+    margin-bottom: 0;
+}
+
+.warning p strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Dark theme adjustments for warnings */
+[data-theme="dark"] .warning {
+    background-color: var(--surface);
+    border-left-color: #FF9800;
+}
+
+[data-theme="dark"] .warning i.fa-info-circle {
+    color: #64B5F6;
+}
+
+[data-theme="dark"] .warning h3 {
+    color: #FF9800;
 }
 
 .footer {
@@ -651,4 +683,18 @@ h3 {
 
 .weather-card:hover .weather-icon {
     transform: scale(1.1);
+}
+
+/* Approved Time Info */
+.approved-time-info {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--surface-2);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--text-2);
+}
+
+.approved-time-info p {
+    margin: 5px 0;
 } 
